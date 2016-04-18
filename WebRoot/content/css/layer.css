@@ -1,0 +1,278 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	list-style-type: none;
+	font-size: 12px;
+}
+
+* {
+	vertical-align: middle;
+}
+
+.tabcontainer {
+	margin: 10px;
+	border-top: none;
+	width: 765px;
+	color: #336fa6;
+}
+
+.tabcontainer * {
+	
+}
+
+.tabcontainer .tabs {
+	height: 26px;
+	padding-left: 1px;
+	padding-top: 10px;
+	margin-bottom: -1px;
+	_margin-bottom: 1px;
+	position: relative;
+	overflow: hidden;
+}
+
+.tabcontainer .tabs span {
+	height: 24px;
+	border: 1px solid #134465;
+	display: inline-block;
+	padding: 0 8px;
+	line-height: 25px;
+	text-align: center;
+	margin-left: -1px;
+}
+
+.tabcontainer .tabs .controlbox {
+	position: absolute;
+	overflow: hidden;
+	bottom: 1px;
+	right: 0px;
+	width: 38px;
+	height: 25px;
+}
+
+.tabcontainer .tabs .lcontrolbox {
+	position: absolute;
+	bottom: 1px;
+	left: 0px;
+}
+
+.tabcontainer .tabs .controlbox i {
+	background: url(../img/ico04.gif) no-repeat scroll 4px 6px #FFF;
+	border: 1px solid #134465;
+	display: inline-block;
+	width: 18px;
+	height: 25px;
+}
+
+.tabcontainer .tabs .lcontrolbox i {
+	background: url(../img/ico05.gif) no-repeat scroll 4px 6px #FFF;
+}
+
+.tabcontainer .tabs .controlbox .down {
+	background: url(../img/ico03.gif) no-repeat scroll 4px 6px #FFF;
+	margin-left: -2px;
+}
+
+.tabcontainer .tabs .curr {
+	border-bottom-color: #FFFFFF;
+}
+
+.tabcontainer .tabs .line {
+	height: 30px;
+	width: 1px;
+	position: absolute;
+	border-left: 1px solid #134465;
+	top: 1;
+	left: 0;
+}
+
+.tabcontainer .cont {
+	border: 1px solid #134465;
+	height: 100%;
+	_margin-top: -2px;
+	padding: 5px 5px 5px 10px;
+	background-color: #FFF;
+}
+
+.tabcontainer .cont .rarea {
+	position: absolute;
+	top: 83px;
+	right: 9px;
+	height: 300px;
+	width: 518px;
+}
+
+.tabcontainer .cont .uploadarea {
+	margin-left: 311px;
+	margin: 8px 0 8px 269px;
+	width: 480px;
+	position: relative;
+}
+
+.tabcontainer .cont .uploadinfoarea {
+	border: 1px solid #134465;
+	height: 200px;
+	width: 741px;
+}
+
+.tabcontainer .cont .rarea .laytable {
+	text-align: center;
+	margin: 4px 4px 0 0;
+}
+
+.tabcontainer .cont .rarea .laytable td {
+	border: 1px solid #134465;
+	color: #336FA6;
+	height: 21px;
+}
+
+.tabcontainer .cont p {
+	line-height: 22px;
+}
+
+.tabcontainer .cont .searea {
+	height: 30px;
+	line-height: 25px;
+	padding: 6px 0;
+	width: 245px;
+}
+
+.tabcontainer .cont .searea b {
+	color: #F00;
+}
+
+.tabcontainer .cont .searea span {
+	width: 70px;
+	float: left;
+	text-align: right;
+}
+
+.tabcontainer .foter {
+	padding-top: 9px;
+	text-align: right;
+	background-color: #FFF;
+	height: 36px; *
+	height: 47px;
+}
+
+.downlistarea {
+	width: 130px;
+	background-color: #FFF;
+	border: 1px solid #134465;
+}
+
+.downlistarea span {
+	width: 120px;
+	padding-left: 10px;
+	display: inline-block;
+	line-height: 20px;
+	color: #336FA6;
+}
+
+.tbsad {
+	width: 100%;
+	 border-collapse: collapse;
+}
+
+.tbsad tr,.tbsad td,.tbsad th {
+	height: 35px;
+	text-align: left;
+	margin-left: 5px;
+	border: none;
+}
+
+.tbsad tr .ttle {
+	text-align: right;
+	margin-right: 5px;
+	width: 80px;
+}
+
+
+
+.tbsad i {
+	font-size: 14px;
+	margin-right: 2px;
+	color: #F00;
+}
+
+.tbsad td input {
+	width: 180px;
+	height: 20px;
+	height: 20px\9;
+}
+.tbsad td .rdo{
+	height:auto;
+	width:auto;
+	margin-right:8px;
+}
+.modelWindow .fleft{
+	
+	width:49%;
+	height:325px;
+	padding:0 1px 0 2px;
+	border:1px solid #ccc;
+	float:left;
+	overflow:hidden;
+}
+.modelWindow .content .fright
+{
+	margin-left:2px;
+	width:49%;
+	height:325px;
+	padding:0 2px 0 1px;
+	border:1px solid #ccc;
+	overflow:hidden;
+	float:left;
+}
+.modelWindow .content .btm{
+	position:absolute;
+	bottom:0;
+	left:0;
+	border:1px solid #ccc;
+	width:99%;
+	height:30px;
+	margin:2px -4px 2px 2px;
+}
+.modelWindow .bottombtn{
+	position:absolute;
+	left:0;
+	bottom:0;
+	margin-left:1px;
+	width:99.3%;
+}
+.modelWindow .bottombtn .close{
+	float:right;
+	margin:3px 5px 0 0;
+}
+.modelWindow .bottombtn .reset{
+	float:right;
+	margin:3px 5px 0 0;
+}
+.modelWindow dl{
+  	float: left;
+    width: 100%;
+}
+.modelWindow dd,.modelWindow dt{
+	line-height:24px;
+}
+.modelWindow dl dd{
+	float: left;
+    margin-left: 15px;
+}
+.modelWindow dl dt{
+    float: left;
+    width: 100%;
+}
+.modelWindow dt span,.modelWindow dd span{
+	margin-left:8px;
+}
+.select{
+	border:1px solid #999;
+	width:120px;
+	height:22px
+}
+.select option{
+	line-height:25px;
+	padding:3px 5px;
+	border-color:#ff0000;
+}

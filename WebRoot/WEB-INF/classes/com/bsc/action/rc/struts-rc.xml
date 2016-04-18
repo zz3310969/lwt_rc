@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<!-- 会诊管理 -->
+	<package name="rc" namespace="/rc" extends="default">
+		<action name="rcmanager" class="rcAction">
+			<result name="json" type="json"></result>
+			<result name="report">/pages/consultation/returnconspeport.jsp</result>
+		</action>
+	</package>
+
+	<!-- 病人管理 -->
+	<package name="patient" namespace="/patient" extends="default">
+		<action name="patManager" class="patientAction">
+			<result name="json" type="json"></result>
+		</action>
+	</package>
+	<!-- 接收会诊管理 -->
+	<package name="revrc" namespace="/revrc" extends="default">
+		<action name="revmanager" class="revAction">
+			<result name="json" type="json"></result>
+			<result name="info">/pages/consultation/consinfo.jsp</result>
+			<result name="dicoms">/pages/consultation/dicoms.jsp</result>
+			<result name="report">/pages/consultation/conspeport.jsp</result>
+		</action>
+	</package>
+</struts> 
+
+

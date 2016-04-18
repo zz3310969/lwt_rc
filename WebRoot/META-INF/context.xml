@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource auth="Container" name="jdbc/birtds" type="javax.sql.DataSource"
+		maxIdle="5" maxWait="-1" driverClassName="com.mysql.jdbc.Driver"
+		username="root" password="root" url="jdbc:mysql://192.168.0.236:3306/remoteconsulation"
+		maxActive="10" />
+</Context>

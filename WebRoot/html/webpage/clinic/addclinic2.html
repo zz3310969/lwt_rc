@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新增会诊记录第二部</title>
+<link rel="stylesheet" type="text/css" href="../../content/css/com.css"/>
+<script language="javascript" src="../../content/js/jquery-1.4.2.min.js" ></script>
+<script language="javascript" src="../../content/js/control.js" ></script>
+<script language="javascript" src="../DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$.checkbox({'id':'cbxclinictype'});
+	$.checkbox({'id':'cbxbingrenqingkuang'});
+});
+</script>
+</head>
+<body>
+<div class="main">
+	<div>
+    	<table class="tbls">
+        	<tbody>
+            	<tr>
+                	<td class="tt">申请单位：</td>
+                	<td >
+                    	安徽省立医院
+                    </td>
+                	<td class="tt">会诊类型：</td>
+                	<td>
+                    	<div style="height:20px;width:80px;">
+                            <div id="cbxclinictype" class="checkbox" style="width:80px;">
+                                <ul>
+                                    <li>会诊类型</li>
+                                    <li value="2">普通会诊</li>
+                                    <li value="3">急会诊</li>
+                                </ul>
+                                <div class="bordercheck"></div>
+                            </div>
+             			</div>
+                    </td>
+                	<td class="tt">会诊方式：</td>
+                	<td>
+                   		 <div style="height:20px;width:80px;">
+                            <div id="cbxminzu" class="checkbox" style="width:80px;">
+                                <ul>
+                                    <li>会诊方式</li>
+                                    <li value="2">交互式</li>
+                                    <li value="3">离线式</li>
+                                    <li value="3">交互+离线</li>
+                                </ul>
+                                <div class="bordercheck"></div>
+                            </div>
+             			</div>
+                    </td>
+                </tr>
+                <tr>
+                	<td class="tt">住院号：</td>
+                	<td><input type="text" value="" class="txtc" style="width:200px;"/></td>
+                	<td class="tt">病情情况：</td>
+                	<td>
+                      <div style="height:20px;width:80px;">
+                            <div id="cbxbingrenqingkuang" class="checkbox" style="width:80px;">
+                                <ul>
+                                    <li>病情情况</li>
+                                    <li value="2">一般病人</li>
+                                    <li value="3">疑难病人</li>
+                                    <li value="2">微重病人</li>
+                                    <li value="3">急诊病人</li>
+                                </ul>
+                                <div class="bordercheck"></div>
+                            </div>
+             			</div>
+                    </td>
+                	<td class="tt">费别：</td>
+                	<td> 
+                    	<input type="text" onfocus="WdatePicker({readOnly:true})" class="Wdate" style="width:90px;"/>
+                    </td>
+                </tr>
+                <tr>
+                	<td class="tt">要求会诊单位：</td>
+                	<td>
+                    	<div style="height:20px;width:80px;">
+                            <div id="cbxminzu" class="checkbox" style="width:80px;">
+                                <ul>
+                                    <li>民族</li>
+                                    <li value="2">汉族</li>
+                                    <li value="3">朝族</li>
+                                </ul>
+                                <div class="bordercheck"></div>
+                            </div>
+             			</div>
+            		 </td>
+                	<td class="tt">医学专科：</td>
+                	<td>
+                    	<input type="radio" name="marry" value="1" class="rd"/>已婚
+                    <input type="radio" name="marry" value="0"  class="rd"/>未婚
+                    </td>
+                	<td class="tt">工作单位：</td>
+                	<td><input type="text" value="" class="txtc" style="width:200px;"/></td>
+                </tr>
+                <tr>
+                	<td class="tt">通信地址：</td>
+                	<td ><input type="text" value="" class="txtc" style="width:200px;"/></td>
+                	<td class="tt">电话：</td>
+                	<td><input type="text" value="" class="txtc" style="width:200px;"/></td>
+                	<td class="tt">手机：</td>
+                	<td><input type="text" value="" class="txtc" style="width:200px;"/></td>
+                </tr>
+                 <tr>
+                	<td colspan="3" style="width:120px;"></td>
+                	<td><a href="addclinic2.html" target="_blank"><input type="button" value="下一步" class="btn"/></a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+html,body{
+	overflow-x:hidden;	
+}
+.barnerarea {
+	
+}
+
+.barnerarea .ttle {
+	background: url(../../content/img/b_bg.gif) repeat scroll #FFFFFF;
+	height: 25px;
+	width: 100%;
+	padding-left: 5px;
+}
+
+.barnerarea .ttle span {
+	line-height: 24px;
+}
+
+.barnerarea .newcons {
+	border-collapse: collapse;
+}
+
+.barnerarea .newcons tr,.barnerarea .newcons td {
+	height: 35px;
+	border: none;
+	background-color: #f4f4f4;
+}
+
+.barnerarea .newcons .tt,.barnerarea .newcons .tt1 {
+	width: 120px;
+	text-align: right;
+	padding-right: 20px;
+}
+.barnerarea .newcons .tt1{
+	width:110px;
+}
+.barnerarea .newcons .ept {
+	margin: 0 5px;
+}
+
+.barnerarea .newcons .alert {
+	width: 60px;
+}
+
+.barnerarea .newcons .txt {
+	width: 240px;
+	border-color: #dcdcdc;
+}
+#cons_ul{
+	width:auto;
+}
+#deditor #cons_ul li{
+	float:left;
+	margin-right:-1px;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	border:solid 1px #dcdcdc;
+	cursor:pointer;
+}
+#cons_ul li:hover{
+	color:#316caf;
+}
+#deditor .cons_cnt{
+	border:solid 1px #dcdcdc;
+
+	margin-top:-1px;
+	_margin-top:-15px;
+	*margin-top:-15px;
+}
+.ulcls{
+	width:100%;
+	height:30px;
+	padding:5px 0 0 10px;
+}
+.ulcls li{
+	float:left;
+	margin-right:8px;
+	
+}
+input,select{
+	vertical-align: middle;
+}

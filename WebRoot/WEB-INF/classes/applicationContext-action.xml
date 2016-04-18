@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 用户管理Action中Spring注入 -->
+	<bean id="userAction" class="com.bsc.action.user.UserManager"
+		scope="prototype">
+		<property name="userlogin" ref="userServiceImpl"></property>
+	</bean>
+	<bean id="systemUserManagementAction" class="com.bsc.action.user.SystemUserManagement"
+		scope="prototype">
+		<property name="systemUserServiceImpl" ref="systemUserServiceImpl"></property>
+		<property name="userRoleServiceImpl" ref="userRoleServiceImpl"></property>
+	</bean>
+
+	<!-- 医院管理Action中Spring注入 -->
+	<bean id="hospitalManagementAction" class="com.bsc.action.user.HospitalManagement"
+		scope="prototype">
+		<property name="hospitalService" ref="hospitalServiceImpl"></property>
+	</bean>
+	<!-- 医院科室管理Action中Spring注入 -->
+	<bean id="hospitalSectionOfficeManagementAction" class="com.bsc.action.user.HospitalSectionOfficeManagement"
+		scope="prototype">
+		<property name="sectionOfficeService" ref="hospitalSectionOfficeServiceImpl"></property>
+		<property name="systemUserServiceImpl" ref="systemUserServiceImpl"></property>
+	</bean>
+	<!-- 链接菜单管理Action中Spring注入 -->
+	<bean id="linkMenuManagementAction" class="com.bsc.action.user.LinkMenuManagement"
+		scope="prototype">
+		<property name="linkMenuServiceImpl" ref="linkMenuServiceImpl"></property>
+	</bean>
+	<!-- 链接菜单字典管理Action中Spring注入 -->
+	<bean id="linkMenuDictionaryManagementAction" class="com.bsc.action.user.LinkMenuDictionaryManagement"
+		scope="prototype">
+		<property name="dictionaryServiceImpl" ref="linkMenuDictionaryServiceImpl"></property>
+	</bean>
+	<!-- 链接菜单功能模块管理Action中Spring注入 -->
+	<bean id="linkMenuFunctionModuleManagementAction" class="com.bsc.action.user.LinkMenuFunctionModuleManagement"
+		scope="prototype">
+		<property name="functionModuleServiceImpl" ref="linkMenuFunctionModuleServiceImpl"></property>
+	</bean>
+	<!-- 链接菜单链接页面管理Action中Spring注入 -->
+	<bean id="linkMenuWebPageManagement" class="com.bsc.action.user.LinkMenuWebPageManagement"
+		scope="prototype">
+		<property name="webPageServiceImpl" ref="linkMenuWebPageServiceImpl"></property>
+	</bean>
+	<!-- 操作日志管理Action中Spring注入 -->
+	<bean id="operationLogManagement" class="com.bsc.action.user.OperationLogManagement"
+		scope="prototype">
+		<property name="operationLogServiceImpl" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 会诊室管理Action中Spring注入 -->
+	<bean id="consultationRoomManagement" class="com.bsc.action.user.ConsultationRoomManagement"
+		scope="prototype">
+		<property name="consultationRoomServiceImpl" ref="consultationRoomServiceImpl"></property>
+	</bean>
+	<!-- 地区字典管理Action中Spring注入 -->
+	<bean id="regionManagement" class="com.bsc.action.user.RegionManagement"
+		scope="prototype">
+		<property name="regionServiceImpl" ref="regionServiceImpl"></property>
+	</bean>
+	<!-- 医院间通讯 关系Action中Spring注入 -->
+	<bean id="hospitalRelationManagement" class="com.bsc.action.user.HospitalRelationManagement"
+		scope="prototype">
+		<property name="relationService" ref="hospitalRelationServiceImpl"></property>
+	</bean>
+
+	<!-- 系统page管理 -->
+	<bean id="webpageAction" class="com.bsc.action.role.WebPageAction"
+		scope="prototype">
+		<property name="webpageservice" ref="webpageServiceImpl"></property>
+		<property name="functionmodleservice" ref="functionModelServiceImpl"></property>
+	</bean>
+	<!-- 模块管理FunctionModel -->
+	<bean id="functionModelAction" class="com.bsc.action.role.FunctionModelAction"
+		scope="prototype">
+		<property name="modelServiceImpl" ref="functionModelServiceImpl"></property>
+		<property name="webpageserviceimpl" ref="webpageServiceImpl"></property>
+		<property name="dictservice" ref="dictserviceimpl"></property>
+	</bean>
+	<!-- 角色管理 -->
+	<bean id="roleAction" class="com.bsc.action.role.RoleAction"
+		scope="prototype">
+		<property name="roleService" ref="roleserviceimpl" />
+		<property name="funmodeservice" ref="functionModelServiceImpl"></property>
+	</bean>
+	<!-- 权限管理 -->
+	<bean id="roleRightAction" class="com.bsc.action.role.RoleRightAction"
+		scope="prototype">
+		<property name="rolerightservice" ref="rolerightserviceimpl"></property>
+		<property name="funcationmode" ref="functionModelServiceImpl"></property>
+		<property name="roleservice" ref="roleserviceimpl"></property>
+	</bean>
+	<!-- 字典管理 -->
+	<bean id="dictaction" class="com.bsc.action.role.DictAction"
+		scope="prototype">
+		<property name="dictservice" ref="dictserviceimpl"></property>
+	</bean>
+	<!-- 会诊管理 -->
+	<bean id="rcAction" class="com.bsc.action.rc.RcAction" scope="prototype">
+		<property name="dictService" ref="dictserviceimpl"></property>
+		<property name="nationService" ref="nationServiceImpl"></property>
+		<property name="hospitalService" ref="hospitalServiceImpl"></property>
+		<property name="ihospitalSectionOfficeService" ref="hospitalSectionOfficeServiceImpl"></property>
+		<property name="patientService" ref="patientServiceImpl"></property>
+		<property name="systemuserservice" ref="systemUserServiceImpl"></property>
+		<property name="consultationService" ref="consultationServiceImpl"></property>
+	</bean>
+	<!-- 病人管理 -->
+	<bean id="patientAction" class="com.bsc.action.rc.PatientAction"
+		scope="prototype">
+		<property name="patientservice" ref="patientServiceImpl"></property>
+		<property name="dictService" ref="dictserviceimpl"></property>
+	</bean>
+	<!-- 接收会诊 -->
+	<bean id="revAction" class="com.bsc.action.rc.RevRcAction" scope="prototype">
+		<property name="revConsultationService" ref="revconsultationServiceImpl"></property>
+		<property name="consultationService" ref="consultationServiceImpl"></property>
+	</bean>
+</beans>

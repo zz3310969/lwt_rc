@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../content/css/com.css"/>
+<link href="../content/css/modelWindow.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../content/css/layer.css"/>
+<script src="../content/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="../content/js/modelWindow.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+		//内嵌弹出层调用
+		$('#inside').click(function () {
+			$.dialog({
+				height: 300,
+				width: 500,
+				bgvisibel: true,
+				title: '系统提示',
+				html: $("#xxx").html()
+			});
+		});
+	}); 
+</script>
+</head>
+
+<body>
+<div class="tabcontainer">
+	<div class="tabs">
+    <div class="line"></div>
+    	<span class="curr">常规会诊</span>
+        <span>非常规会诊</span>
+    </div>
+    <div class="cont">
+    	<p style="margin-bottom:20px;">说明：<span style="margin-left:20px;">常规会诊指在正常时间内，按计划安排一位专家的实时动态会诊。</span></p>
+        <h5 style="padding-left:55px;">实时动态会诊</h5>
+        <p>说明：<span style="margin-left:13px;">
+        实时动态会诊指申请医生与专家在异地通过蓝卫通远程医学平台，共同在虚拟会诊室里进行"面对面"视频交流，并对传输的病</span><br/>
+        <span style="margin-left:55px;">例资料进行同步讨论，此会诊基本实现了传统会诊的模式</span></p>
+        <p style="padding-left:55px;"><input type="radio" name="clinci" value="" style="margin-right:5px;"/>临床会诊
+        <span style="padding-left:95px;">申请专家与医生在异地通过网络，共同在虚拟会诊室里面进行"面对面"的交流，并对传输的</span><br />
+        <span style="padding-left:165px;">病历资料进行同步讨论，此会诊基本实现了传统会诊的模式。此会诊太提交病历资料后24</span><br />
+        <span style="padding-left:165px;">小时内应诊，此类会诊只记基本费用，即专家费用。</span></p>
+        <h5 style="padding-left:55px;">非实时动态会诊</h5>
+        <p>说明：<span style="margin-left:18px;">专家通过阅读和研究远程传输的病历和资料，专家和申请医生不做"面对面"交流，针对此类病历给出咨询报告。
+        </span></p>
+        <p style="padding-left:55px;"><input type="radio" name="clinci" value="" style="margin-right:5px;"/>病历资料会诊
+        <span style="padding-left:70px;">专家通过阅读和研究远程传输的病历和资料，针对此类病历资料给你咨询报告，此类会诊费用由会</span><br />
+       	<span style="padding-left:165px;">会诊医院单独定价。</span></p>
+        <p style="padding-left:55px;"><input type="radio" name="clinci" value="" style="margin-right:5px;"/>病历资料会诊
+        <span style="padding-left:70px;">专家通过阅读和研究远程传输的病历和资料，结合申请医院提供的病历摘要，给出病理咨询报告</span><br />
+       	<span style="padding-left:165px;">此类会诊费用由会诊医院单独定价。</span></p>
+        <p style="padding-left:55px;"><input type="radio" name="clinci" value="" style="margin-right:5px;"/>影响资料会诊
+        <span style="padding-left:68px;">专家通过阅读和研究远程传输的病历和资料结合申请医院提供的病历摘要，给出病理咨询报告</span><br />
+        <span style="padding-left:165px;">此类会诊费用由会诊医院单独定价。</span></p>
+    </div>
+    <div style="height:30px;padding-top:20px; text-align:right;">
+    	<input type="button" value="下一步" id="btn_next" class="btn"/>
+        <input type="button" value="关闭" id="btn_close" class="btn"/>
+    </div>
+</div>
+</body>
+</html>

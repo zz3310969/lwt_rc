@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../content/css/com.css"/>
+<link href="../content/css/modelWindow.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../content/css/layer.css"/>
+<script src="../content/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="../content/js/control.js" type="text/javascript"></script>
+<script src="../content/js/modelWindow.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+	var $panel_div = $('<div id="newClinicLayer">').addClass("tabcontainer").append(
+					'<div class="tabs">'+
+						'<div class="line"></div>'+
+						'<div class="scrolltab">'+
+						'<span>会诊信息</span>'+
+						'<span>患者基本信息</span>'+
+						'<span>主诉</span>'+
+						'<span>现病史</span>'+
+						'<span>既往史</span>'+
+						'<span>个人史</span>'+
+						'<span>月经史</span>'+
+						'<span>生育史</span>'+
+						'<span>家族史</span>'+
+						'<span>体查阳性体征</span>'+
+						'<span>实验室检查阳性结果</span>'+
+						'<span>其它阳性检查结果</span>'+
+						'<span class="curr">影像资料</span>'+
+						'<span>临床诊断</span>'+
+						'<span>目前治疗</span>'+
+						'<span>会诊目的</span>'+
+						'</div>'+
+						'<div class="controlbox"><i id="scrollleft"></i><i id="downlist" class="down"></i></div>'+
+						'<div class="controlbox lcontrolbox" style="display:none;"><i id="scrollright"></i></div>'+
+					'</div>'+
+					'<div class="cont" style="display:none;">'+
+						'<span style="margin-left:20px;">患者医院所在地区：新疆维吾尔自治区</span>'+
+						'<span style="margin-left:20px;">患者所属医院：喀什市人民医院</span>'+
+						'<div class="searea">'+
+							'<span>所在地区：<b>*</b></span>'+
+							'<div style="height:20px;width:125px;float:left;">'+
+								'<div id="cbxarea" class="checkbox" style="width:110px;">'+
+									'<ul>'+
+										'<li value="2">医学专科</li>'+
+										'<li value="3">内科</li>'+
+										'<li value="2">医学专科</li>'+
+										'<li value="3">内科</li>'+
+									'</ul>'+
+									'<div class="bordercheck"></div>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>所属医院：<b>*</b></span>'+
+							'<div style="height:20px;width:125px;float:left;">'+
+								'<div id="cbxhospital" class="checkbox" style="width:110px;">'+
+									'<ul>'+
+										'<li value="2">医学专科</li>'+
+										'<li value="3">内科</li>'+
+									'</ul>'+
+									'<div class="bordercheck"></div>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>所属科室：<b>*</b></span>'+
+							'<div style="height:20px;width:125px;float:left;">'+
+								'<div id="cbxdept" class="checkbox" style="width:110px;">'+
+									'<ul>'+
+										'<li value="2">医学专科</li>'+
+										'<li value="3">内科</li>'+
+									'</ul>'+
+									'<div class="bordercheck"></div>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>申请医生：<b>*</b></span>'+
+							'<input type="text" value="" id="txt_app" class="txt" style="width:140px;">'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>录入人：<b>*</b></span>'+
+							'<input type="text" value="" id="txt_entry" class="txt" style="width:140px;">'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>备注：<b>*</b></span>'+
+							'<textarea id="txt_remark" style="border: 1px solid #999999;height:34px;width:145px;"></textarea>'+
+						'</div>'+
+						'<div class="searea">'+
+							'<span>会诊类型：</span>'+
+							'<input type="button" value="修改类型" id="btn_fastsave" class="btn"/>'+
+						'</div>'+
+						'<div class="rarea">'+
+							'<table class="laytable">'+
+							  '<tr>'+
+								'<td colspan="3" style="width:140px;">会诊类型</td>'+
+								'<td><p>基本费用</p>'+
+								'<p>（单位：元）</p></td>'+
+								'<td><p>类型费用</p>'+
+								'<p>（单位：元）</p></td>'+
+								'<td><p>其它费用</p>'+
+								'<p>（单位：元）</p></td>'+
+								'<td style="width:80px;">备注</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td rowspan="5" style="width:27px;">常<br/>规<br/>会<br/>诊</td>'+
+								'<td> 交互式远程</td>'+
+								'<td style="width:75px;">临床会诊</td>'+
+								'<td style="width:75px;">专家费用</td>'+
+								'<td style="width:75px;">类型费用</td>'+
+								'<td style="width:75px;">特定</td>'+
+								'<td>&nbsp;</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td rowspan="4" style="width:75px;">离线式远程</td>'+
+								'<td>病历资料会诊</td>'+
+								'<td> ---</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>单独定价</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td>病历资料会诊</td>'+
+								'<td>---</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>单独定价</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td>病历资料会诊</td>'+
+								'<td>---</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>单独定价</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td>病历资料会诊</td>'+
+								'<td>---</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>单独定价</td>'+
+								'</tr>'+
+							  '<tr>'+
+								'<td rowspan="5">非<br/>常<br/>规<br/>会<br/>诊</td>'+
+								'<td rowspan="5">交互式远程</td>'+
+								'<td>联合会诊</td>'+
+								'<td>专家费用</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>费用合计由参与会诊的专家费用累计组成</td>'+
+							  '</tr>'+
+							  '<tr>'+
+								'<td>点名会诊</td>'+
+								'<td>专家费用</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>一位专家</td>'+
+							  '</tr>'+
+							  '<tr>'+
+								'<td>急诊会诊</td>'+
+								'<td>专家费用</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>一位专家</td>'+
+							  '</tr>'+
+							  '<tr>'+
+								'<td>急诊点名会诊</td>'+
+								'<td>专家费用</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>一位专家</td>'+
+							  '</tr>'+
+							  '<tr>'+
+								'<td>远程重症监护</td>'+
+								'<td>专家费用</td>'+
+								'<td>类型费用</td>'+
+								'<td>特定</td>'+
+								'<td>单独定价</td>'+
+								'</tr>'+
+							'</table>'+
+						'</div>'+
+					'</div>'+
+					'<div class="cont">'+
+						'<span style="margin-left:20px;">患者医院所在地区：新疆维吾尔自治区</span>'+
+						'<span style="margin-left:20px;">患者所属医院：喀什市人民医院</span><br class="cls"/>'+
+						'<div class="uploadarea">'+
+							'<input type="text" class="txt" value="" style="width:150px;"/>'+
+							'<input type="button" class="btn" value="浏览" style="margin-left:5px;"/>'+
+							'<input type="button" class="btn" value="上传" style="margin-left:5px;"/>'+
+							'<input type="button" class="btn" value="取消" style="margin-left:5px;"/>'+
+							'<div style="height:20px;width:90px;position:absolute;top:0px;right:5px;">'+
+								'<div id="cbxdept" class="checkbox" style="width:90px;">'+
+									'<ul>'+
+										'<li value="2">类型</li>'+
+										'<li value="3">CT</li>'+
+									'</ul>'+
+									'<div class="bordercheck"></div>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="uploadinfoarea">'+
+							'<img src="file://C:\\Users\\Administrator\\Desktop\\d5.gif"/>'+
+						'</div>'+
+					'</div>'+
+					'<div class="foter">'+
+						'<input type="button" value="快速保存" id="btn_fastsave" class="btn"/>'+
+						'<input type="button" value="保存" id="btn_save" class="btn" style="margin-left:10px;"/>'+
+						'<input type="button" value="关闭" id="btn_close" class="btn" style="margin-left:10px;"/>'+
+					'</div>');
+				
+	function BindEventHandler($panel_div){
+		var $scrollleft = $panel_div.find('i[id="scrollleft"]');
+		var $scrollright = $panel_div.find('i[id="scrollright"]'); 
+			
+		$panel_div.find('input[id="btn_close"]').click(function(){
+			$('#newClinicLayer').parent().parent().find('div[class="title"]>img:eq(0)').trigger('click');	
+		});
+
+		$panel_div.find('i[id="downlist"]').click(function(){
+			$('.downlist').remove();
+			$span = $panel_div.find('div[class="tabs"]').find('span').clone();			
+			var pos = $(this).offset();
+			var z_index = new Date().getTime().toString().substring(8);
+			var $menulist = $('<div>').addClass("downlistarea").append($span)
+							.css({'position':'absolute','top':pos.top+25,'left':pos.left,'z-index':z_index});	
+								
+			$menulist.hover(function(){},function(){$(this).remove();});
+
+			$('body').append($menulist);
+			
+			$menulist.find('span').hover(function(){
+				$(this).css({'background-color':'#f7dea8'});	
+			},function(){
+				$(this).css({'background-color':'transparent'});
+			});			
+		});
+		
+		$scrollleft.click(function(){
+			$('#scrollright').parent().css('display','');
+			var $scrolltab = $panel_div.find('div[class="scrolltab"]');
+			var marginleft= $scrolltab.css('margin-left');
+			if(marginleft =="-400px"){
+				$(this).hide();
+				$(this).next().css('margin-left','18px');
+			}else{
+				$scrolltab.animate({ 'margin-left': "-=80px"},100);
+			}
+		});
+		
+		$scrollright.click(function(){
+			$scrollleft.show().next().css('margin-left','-2px');
+			var $scrolltab = $panel_div.find('div[class="scrolltab"]');
+			var marginleft= $scrolltab.css('margin-left');
+			if(marginleft =="0px" || marginleft =="-80px"){ 
+				$scrolltab.animate({ 'margin-left': "0px"},100);
+				$(this).parent().hide();return; 
+			}else{
+				$scrolltab.animate({ 'margin-left': "+=80px"},100);
+			}
+			
+		});
+			
+		$.checkbox({'id':'cbxarea','height':'17px'});
+		$.checkbox({'id':'cbxhospital','height':'17px'});
+		$.checkbox({'id':'cbxdept','height':'17px'});
+	}
+	$(document).ready(function () {
+		
+		$('#btn_new').click(function () {
+			$.modelWindow({handler:'newclinic',height:474,width:785,bgvisibel:true,title:'新建会诊 -- 类型选择', html:$panel_div});
+			BindEventHandler($panel_div);
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+<input type="button" value="新建" id="btn_new"/>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../content/css/com.css"/>
+<link rel="stylesheet" type="text/css" href="../content/css/modelWindow.css"/>
+<script language="javascript" type="text/javascript" src="../content/js/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../content/js/control.js"></script>
+<script language="javascript" type="text/javascript" src="../content/js/modelWindow.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$.checkbox({'id':'cbxcard'});
+	$.checkbox({'id':'cbxexample'});
+});
+</script>
+</head>
+<body>
+	<div style="height:20px;width:80px;">
+        <div id="cbxcard" class="checkbox" style="width:80px;">
+            <ul>
+                <li value="0">证件类型</li>
+                <li value="1">身份证</li>
+                <li value="2">军官证</li>
+            </ul>
+            <div class="bordercheck"></div>
+        </div>
+        <div style="height:20px;width:200px;">
+            <div id="cbxexample" class="checkbox" style="width:200px;">
+                <ul>
+                	<li value="0">┌─所有单位</li>
+                    <li value="0">├─卫生部</li>
+                    <li value="1">│<b></b>├─河北</li>
+                    <li value="1">│<b></b>├─安徽</li>
+                    <li value="1">│<b></b>│<b></b>├─合肥市</li>                    
+                    <li value="1">│<b></b>│<b></b>├─安庆</li> 
+                    <li value="1">│<b></b>│<b></b>├─蚌埠</li> 
+                    <li value="1">│<b></b>│<b></b>├─滁州</li> 
+                    <li value="1">│<b></b>│<b></b>├─六州</li>                    
+                    <li value="1">│<b></b>│<b></b>├─宿州</li> 
+                    <li value="1">│<b></b>│<b></b>├─芜湖</li> 
+                    <li value="1">│<b></b>│<b></b>├─宣城</li> 
+                    <li value="1">│<b></b>│<b></b>├─阜阳市</li> 
+                    <li value="1">│<b></b>│<b></b>└─池州市</li>
+					<li value="1">│<b></b>├─福建</li>                     
+                    <li value="1">│<b></b>├─甘肃</li>
+                    <li value="1">│<b></b>├─广东</li>
+                    <li value="1">│<b></b>├─广西</li>
+                    <li value="1">│<b></b>├─贵州</li>
+                    <li value="1">│<b></b>├─海南</li>
+                    <li value="1">│<b></b>│<b></b>├─海口</li>
+                    <li value="1">│<b></b>│<b></b>└─三亚</li>
+                    <li value="1">│<b></b>├─河北</li>
+                    <li value="1">│<b></b>│<b></b>└─石家庄</li>
+                    <li value="1">│<b></b>│<b></b>└─邯郸</li>
+                    <li value="1">│<b></b>│<b></b>└─沧州市</li>
+                    <li value="1">│<b></b>│<b></b>└─张家口市</li>
+                    <li value="1">│<b></b>│<b></b>└─承德市</li>
+                    <li value="1">│<b></b>│<b></b>└─保定市</li>
+                    <li value="1">│<b></b>│<b></b>└─唐山市</li>            
+                </ul>
+                <div class="bordercheck"></div>
+            </div>
+        </div>
+        <select style="width:200px;">
+        	<option>┌─所有单位</option>
+        	<option>├─卫生部</option>
+        	<option style="margin-left:1px;">│		├─河北</option>
+        	<option style="margin-left:1px;">│	│	├─安徽</option>  
+            <option style="margin-left:1px;">│	│	├─合肥市</option> 
+        	<option>└─吉林</option>                                             
+        </select>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 定义Struts2常量 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.multipart.parser" value="jakarta" />
+	<constant name="struts.multipart.maxSize" value="102400000000" />
+	<constant name="struts.action.extension" value="action" />
+
+	<!-- default包定义本Web应用程序的公共配置，如全局result、全局exception、全局interceptor -->
+	<package name="default" extends="json-default">
+		<!-- 定义一个拦截器 -->
+		<interceptors>
+			<interceptor name="authority"
+				class="com.bsc.system.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="mydefault"></default-interceptor-ref>
+		<global-results>
+			<result name="error">/util/global/noRight.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+
+	<!-- 系统管理 -->
+	<include file="com/bsc/action/user/struts-user.xml"></include>
+	<include file="com/bsc/action/role/struts-system.xml"></include>
+	<!-- 会诊管理 -->
+	<include file="com/bsc/action/rc/struts-rc.xml"></include>
+</struts>
+
+

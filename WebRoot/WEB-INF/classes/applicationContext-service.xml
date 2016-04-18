@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 用户管理服务接口 -->
+	<bean id="userService" class="com.bsc.service.system.IUserLoginService"
+		abstract="true"></bean>
+	<!-- 用户登录管理服务接口实现 -->
+	<bean id="userServiceImpl" class="com.bsc.service.system.impl.UserLoginServiceImpl"
+		parent="userService">
+		<property name="userDao" ref="userManagerDAOImpl"></property>
+		<property name="rolemanager" ref="roleDAOImpl"></property>
+	</bean>
+	<!-- 用户管理服务接口实现 -->
+	<bean id="systemUserServiceImpl" class="com.bsc.service.system.impl.SystemUserServiceImpl">
+		<property name="sytemUserDao" ref="sytemUserDaoImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 用户角色中间表服务接口实现 -->
+	<bean id="userRoleServiceImpl" class="com.bsc.service.system.impl.UserRoleServiceImpl">
+		<property name="userRoleDao" ref="userRoleDaoImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 医院管理服务接口实现 -->
+	<bean id="hospitalServiceImpl" class="com.bsc.service.system.impl.HospitalServiceImpl">
+		<property name="hospitalDao" ref="hospitalDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 医院科室管理服务接口实现 -->
+	<bean id="hospitalSectionOfficeServiceImpl"
+		class="com.bsc.service.system.impl.HospitalSectionOfficeServiceImpl">
+		<property name="sectionOfficeDao" ref="sectionOfficeDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 操作日志管理服务实现 -->
+	<bean id="operationLogServiceImpl" class="com.bsc.service.system.impl.OperationLogServiceImpl">
+		<property name="operationLogDao" ref="operationLogDao"></property>
+	</bean>
+	<!-- 会诊室管理服务实现 -->
+	<bean id="consultationRoomServiceImpl" class="com.bsc.service.system.impl.ConsultationRoomServiceImpl">
+		<property name="consultationRoomDao" ref="consultationRoomDao"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 地区字典管理服务实现 -->
+	<bean id="regionServiceImpl" class="com.bsc.service.system.impl.RegionServiceImpl">
+		<property name="regionDao" ref="regionDao"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+		<!-- 地区字典管理服务实现 -->
+	<bean id="hospitalRelationServiceImpl" class="com.bsc.service.system.impl.HospitalRelationServiceImpl">
+		<property name="relationDao" ref="hospitalRelationDao"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	
+	
+		<!-- 操作链接菜单字典管理服务实现 -->
+	<bean id="linkMenuServiceImpl"
+		class="com.bsc.service.system.impl.LinkMenuServiceImpl">
+		<property name="linkMenuDao" ref="linkMenuDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	
+	
+	<!-- 操作链接菜单字典管理服务实现 -->
+	<bean id="linkMenuDictionaryServiceImpl"
+		class="com.bsc.service.system.impl.LinkMenuDictionaryServiceImpl">
+		<property name="linkMenuDictionaryDao" ref="linkMenuDictionaryDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 操作链接菜单功能模块管理服务实现 -->
+	<bean id="linkMenuFunctionModuleServiceImpl"
+		class="com.bsc.service.system.impl.LinkMenuFunctionModuleServiceImpl">
+		<property name="linkMenuFunctionModuleDao" ref="linkMenuFunctionModuleDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+	<!-- 操作链接菜单页面管理服务实现 -->
+	<bean id="linkMenuWebPageServiceImpl" class="com.bsc.service.system.impl.LinkMenuWebPageServiceImpl">
+		<property name="linkMenuWebPageDao" ref="linkMenuWebPageDAOImpl"></property>
+		<property name="operationLogService" ref="operationLogServiceImpl"></property>
+	</bean>
+
+
+	<!-- webpage服务层 -->
+	<bean id="webpageService" class="com.bsc.service.system.IWebPageService"
+		abstract="true"></bean>
+	<!-- webpage服务层实现 -->
+	<bean id="webpageServiceImpl" class="com.bsc.service.system.impl.WebPageServiceImpl"
+		parent="webpageService">
+		<property name="webpagedao" ref="webPageDAOImpl"></property>
+	</bean>
+
+	<!-- FunctionModel模块Service层 -->
+	<bean id="functionModelService" class="com.bsc.service.IFunctionModelService"
+		abstract="true"></bean>
+	<bean id="functionModelServiceImpl" class="com.bsc.service.system.impl.FunctionModeServiceImpl"
+		parent="functionModelService">
+		<property name="functionMode" ref="functionModelDAOImpl"></property>
+	</bean>
+	<!-- 字典管理服务层 -->
+	<bean id="dictservice" class="com.bsc.service.system.IDictService"
+		abstract="true" />
+	<bean id="dictserviceimpl" class="com.bsc.service.system.impl.DictServiceImpl"
+		parent="dictservice">
+		<property name="dictdao" ref="dictDaoimpl"></property>
+	</bean>
+	<!-- 角色管理 -->
+	<bean id="roleservice" class="com.bsc.service.system.IRoleService"
+		abstract="true" />
+	<bean id="roleserviceimpl" class="com.bsc.service.system.impl.RoleServiceImpl"
+		parent="roleservice">
+		<property name="roledao" ref="roleDAOImpl"></property>
+	</bean>
+	<!-- 权限管理 -->
+	<bean id="rolerightservice" class="com.bsc.service.system.IRoleRightService"
+		abstract="true" />
+	<bean id="rolerightserviceimpl" class="com.bsc.service.system.impl.RoleRightServiceImpl"
+		parent="rolerightservice">
+		<property name="rolerightdao" ref="rolerightdaoimpl"></property>
+	</bean>
+	<!-- 病人信息会诊管理 -->
+	<bean id="patientService" class="com.bsc.service.rc.IPatientService"
+		abstract="true"></bean>
+	<bean id="patientServiceImpl" class="com.bsc.service.rc.impl.PatientServiceImpl"
+		parent="patientService">
+		<property name="patientdao" ref="patientDaoImpl"></property>
+		<property name="consultationDao" ref="consultDaoImpl"></property>
+	</bean>
+	<!-- 民族管理 -->
+	<bean id="nationService" class="com.bsc.service.system.INationService"
+		abstract="true" />
+	<bean id="nationServiceImpl" class="com.bsc.service.system.impl.NationServiceImpl"
+		parent="nationService">
+		<property name="nationdao" ref="nationDaoimpl"></property>
+	</bean>
+	<!-- 会诊管理服务层 -->
+	<bean id="consultationService" class="com.bsc.service.rc.IConsultationService"
+		abstract="true"></bean>
+	<bean id="consultationServiceImpl" class="com.bsc.service.rc.impl.ConsultationServiceimpl"
+		parent="consultationService">
+		<property name="consultationDao" ref="consultDaoImpl"></property>
+	</bean>
+	<!-- 接收会诊服务层 -->
+	<bean id="revconsultationService" class="com.bsc.service.rc.IRevConsultationService" abstract="true"/>
+	<bean id="revconsultationServiceImpl" class="com.bsc.service.rc.impl.RevConsultationServiceImpl" parent="revconsultationService">
+		<property name="revConsultationDao" ref="revconsultDAOImpl"></property>
+	</bean>
+</beans>

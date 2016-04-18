@@ -1,0 +1,23 @@
+/* CSS Document */
+
+html {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+}
+body {
+	font-family: Verdana, Arial,Vrinda,Tahoma;
+	font-size:12px;
+	margin:0px auto;
+	padding:0px;
+	text-align:center;
+}
+img {
+	border: 0px;
+}
+.tip{
+	height:500px;
+	line-height:500px;
+	}

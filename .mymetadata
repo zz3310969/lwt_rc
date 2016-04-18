@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="lwt_rc"
+  id="myeclipse.1383901365625"
+  context-root="/lwt_rc"
+  j2ee-spec="5.0"
+  archive="lwt_rc.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

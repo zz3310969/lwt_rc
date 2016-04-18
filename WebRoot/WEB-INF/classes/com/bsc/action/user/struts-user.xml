@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="user" namespace="/user" extends="default">
+		<action name="usermanager" class="userAction">
+			<result name="json" type="json">
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="systemUserManagement" class="systemUserManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="hospitalManagement" class="hospitalManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="hospitalSectionOfficeManagement" class="hospitalSectionOfficeManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="linkMenuManagement" class="linkMenuManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+				<param name="ignoreHierarchy">true</param><!-- 设置JSON输出父类中的数据 -->
+				<param name="excludeNullProperties">false</param>
+				<!--<param name="excludeProperties"> resultCode,objectRecordId,data\[\d+\]\.addTime,data\[\d+\]\.description,data\[\d+\]\.functionModuleId,data\[\d+\]\.menuId,data\[\d+\]\.primaryKey,data\[\d+\]\.updateTime,data\[\d+\]\.webPageId, 
+					data\[\d+\]\.functionmoduleRef.addTime,data\[\d+\]\.functionmoduleRef.updateTime 
+					</param> excludeProperties参数过滤不需要输出的数据字段 -->
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="linkMenuDictionary" class="linkMenuDictionaryManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="linkMenuFunctionModule" class="linkMenuFunctionModuleManagementAction">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="linkMenuWebPage" class="linkMenuWebPageManagement">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="operationLog" class="operationLogManagement">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="consultationRoom" class="consultationRoomManagement">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="region" class="regionManagement">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+		<action name="hospitalRelation" class="hospitalRelationManagement">
+			<result name="json" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="lift">/pages/lpage.jsp</result>
+		</action>
+	</package>
+</struts>
+
+

@@ -1,0 +1,6 @@
+addwebpage action://rootpath+"/webpage/webpagemanager!addWebPage.action";
+querywebpage action://rootpath+"/pages/webpagemanager!findAll.action"
+deletewebpage action://rootpath+"/pages/webpagemanager!deleteWebPage.action"
+updatewebpage action://rootpath+"/pages/webpagemanager!updateWebPage.action"
+clear action://
+batchadd action://rootpath+"/pages/webpagemanager!addAll.action"

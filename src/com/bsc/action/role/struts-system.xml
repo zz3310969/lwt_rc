@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 系统页面管理Action -->
+	<package name="pages" namespace="/pages" extends="default">
+		<action name="webpagemanager" class="webpageAction">
+			<result name="json" type="json"></result>
+		</action>
+	</package>
+	<!-- 模块管理Action -->
+	<package name="funmode" namespace="/funmode" extends="default">
+		<action name="funmodeaction" class="functionModelAction">
+			<result name="json" type="json"></result>
+		</action>
+	</package>
+	<!-- 角色管理 -->
+	<package name="role" namespace="/role" extends="default">
+		<action name="roleaction" class="roleAction">
+			<result name="json" type="json"></result>
+		</action>
+	</package>
+	<!-- 权限管理 -->
+	<package name="right" namespace="/right" extends="default">
+		<action name="rightaction" class="roleRightAction">
+			<result name="json" type="json"/>
+		</action>
+	</package>
+	<!-- 字典管理 -->
+	<package name="dict" namespace="/dict" extends="default">
+		<action name="dictaction" class="dictaction">
+			<result name="json" type="json"></result>
+		</action>
+	</package>
+</struts> 
+
+

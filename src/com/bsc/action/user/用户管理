@@ -1,0 +1,15 @@
+$.extend({
+	lwt_ajax:function(ajax_url,JSONdata,call_back){
+		$.ajax({
+				type:'POST',
+				url:ajax_url,
+				data:JSONdata,
+				success:function(r_data){
+					if(bparse)
+					call_back(JSON.parse(r_data));
+					else
+					call_back(r_data);
+				},
+				dataType:"JSON"
+		})
+	}});

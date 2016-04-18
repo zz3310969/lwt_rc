@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script language="javascript" type="text/javascript" src="../../content/js/jquery-1.4.2.min.js"></script>
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    font-family: arial,"宋体";
+	border-collapse:collapse;
+}
+body,html{
+	
+}
+.left{
+	width:200px;
+	border:1px solid #B8C9D6;
+}
+.lmenu{
+	color: #555555;	
+	height:500px;
+	
+}
+.lmenu .menuitem{
+	margin-top:5px;
+}
+.lmenu .menuitem b{
+	font-family: "宋体";
+    font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	line-height:30px;
+	margin-left:2px;
+	cursor:pointer;
+}
+.lmenu .menuitem .title{
+	background:url(../../content/img/nav02.gif) no-repeat scroll;
+	height:28px;
+    padding-left:15px;
+	margin-left:2px;
+}
+.lmenu .menuitem .ine{
+	border-top:1px solid #B8C9D6;
+}
+.lmenu .menuitem ul{
+	margin-top:10px;
+}
+.lmenu .menuitem ul li{
+	background:url(../../content/img/icon.png) no-repeat scroll 21px 5px;
+	padding-left:35px;
+	margin-top:4px;
+	line-height:20px;
+}
+.lmenu .menuitem ul .curr{
+	background:url(../../content/img/icon.png) no-repeat scroll 21px -12px;
+}
+.lmenu .menuitem ul li a{
+	color: #555555;
+}
+.lmenu .menuitem ul li a:hover{
+	color: #FF0000;
+	text-decoration:underline;
+}
+a{
+	text-decoration: none;	
+}
+</style>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('#lmenu .menuitem .title').click(function(){
+			$(this).next("ul").toggle();
+			if($(this).next("ul").is(":hidden")){
+				$(this).find('img:eq(0)').attr('src','../../content/img/ico04.gif');	
+			}
+			else{
+				$(this).find('img:eq(0)').attr('src','../../content/img/ico03.gif');		
+			}
+		});
+		$('#lmenu .menuitem ul li a').click(function(){
+			
+			$('#lmenu .menuitem ul li').each(function(){
+				$(this).removeClass("curr");	
+			});
+			$(this).parent().addClass("curr");
+		});
+		
+		
+	});
+	//<!-- 对就得浏览器隐藏 
+	if (top.location==self.location){ 
+	self.location.replace("index.html"); 
+	} 
+// 停止隐藏 --> 
+</script> 
+</head>
+<body>
+<div class="lmenu" id="lmenu">
+        	<div class="menuitem">
+            	<div class="title">
+                    <img src="../../content/img/ico03.gif" alt=""/>
+                    <b>会诊管理</b>
+                </div>
+                <ul>
+                	<li><a href="../clinic/addclinic.html" target="mainframe">新增会诊申请</a></li> 
+                    <li><a href="../clinic/appclinic.html" target="mainframe">会诊申请记录</a></li>
+                    <li><a href="../clinic/rcvclinic.html" target="mainframe">会诊接收记录</a></li>
+                    <li><a href="../clinic/expertduty.html" target="mainframe">专家排班表</a></li>
+                </ul>
+            </div>
+            <div class="menuitem">
+            	<div class="title">
+                    <img src="../../content/img/ico04.gif" alt=""/>
+                    <b>统计分析</b>
+                </div>
+                <ul style="display:none;">
+                	<li><a href="../../tbody.html" target="mainframe">接收会诊统计</a></li>
+                    <li><a href="#" target="mainframe">病人身份统计</a></li>
+                    <li><a href="#" target="mainframe">会议参加人数</a></li>
+                    <li><a href="#" target="mainframe">教学听众人数</a></li>
+                </ul>
+            </div>
+            <div class="menuitem">
+            	<div class="title">
+                    <img src="../../content/img/ico04.gif" alt=""/>
+                    <b>系统管理</b>
+                </div>
+                <ul style="display:none;"><li><a href="../sysmanager/user.html" target="mainframe">用户管理</a></li>
+                    <li><a href="../../tbody.html" target="mainframe">专家管理</a></li>
+                    <li><a href="../../tbody.html" target="mainframe">单位管理</a></li>
+                    <li><a href="../../tbody.html" target="mainframe">科室管理</a></li>
+                    <li><a href="../../tbody.html" target="mainframe">会诊室管理</a></li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 用户管理访问接口 -->
+	<bean id="userManagerDAO" class="com.bsc.dao.system.IUserManagerDAO"
+		abstract="true"></bean>
+
+	<!-- 用户管理访问接口实现 -->
+	<bean id="userManagerDAOImpl" class="com.bsc.dao.system.impl.UserManagerDAOImpl"
+		parent="userManagerDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 角色管理接口 -->
+	<bean id="roleDAO" class="com.bsc.dao.system.IRoleManager"
+		abstract="true"></bean>
+	<!-- 角色管理接口实现 -->
+	<bean id="roleDAOImpl" class="com.bsc.dao.system.impl.RoleManagerImpl"
+		parent="roleDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- webpage管理 -->
+	<bean id="webPageDAO" class="com.bsc.dao.system.IWebPageDAO"
+		abstract="true"></bean>
+	<!-- webpage管理接口实现 -->
+	<bean id="webPageDAOImpl" class="com.bsc.dao.system.impl.WebPageDAOImpl"
+		parent="webPageDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- FunctionModel管理 -->
+	<bean id="functionModelDAO" class="com.bsc.dao.system.IFunctionModelDAO"
+		abstract="true" />
+	<bean id="functionModelDAOImpl" class="com.bsc.dao.system.impl.FunctionModelDAOImpl"
+		parent="functionModelDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 字典管理 -->
+	<bean id="dictDao" class="com.bsc.dao.system.IDict" abstract="true" />
+	<bean id="dictDaoimpl" class="com.bsc.dao.system.impl.DictDAOimpl"
+		parent="dictDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 角色权限管理 -->
+	<bean id="rolerightdao" class="com.bsc.dao.system.IRoleRightDAO"
+		abstract="true" />
+	<bean id="rolerightdaoimpl" class="com.bsc.dao.system.impl.RoleRightDAOImpl"
+		parent="rolerightdao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 用户管理 -->
+	<bean id="sytemUserDaoImpl" class="com.bsc.dao.system.impl.SystemUserDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 用户角色中间表管理 -->
+	<bean id="userRoleDaoImpl" class="com.bsc.dao.system.impl.UserRoleDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 医院管理 -->
+	<bean id="hospitalDAOImpl" class="com.bsc.dao.system.impl.HospitalDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 医院科室管理 -->
+	<bean id="sectionOfficeDAOImpl" class="com.bsc.dao.system.impl.HospitalSectionOfficeDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 链接菜单管理 -->
+	<bean id="linkMenuDAOImpl" class="com.bsc.dao.system.impl.LinkMenuDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 链接菜单字典管理 -->
+	<bean id="linkMenuDictionaryDAOImpl" class="com.bsc.dao.system.impl.LinkMenuDictionaryDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 链接菜单功能模块管理 -->
+	<bean id="linkMenuFunctionModuleDAOImpl" class="com.bsc.dao.system.impl.LinkMenuFunctionModuleDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 链接菜单页面管理 -->
+	<bean id="linkMenuWebPageDAOImpl" class="com.bsc.dao.system.impl.LinkMenuWebPageDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+
+	<!-- 日志管理 -->
+	<bean id="operationLogDao" class="com.bsc.dao.system.impl.OperationLogDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 会诊室管理 -->
+	<bean id="consultationRoomDao" class="com.bsc.dao.system.impl.ConsultationRoomDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	<!-- 会诊室管理 -->
+	<bean id="hospitalRelationDao" class="com.bsc.dao.system.impl.HospitalRelationDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+	
+	<!-- 地区字典管理 -->
+	<bean id="regionDao" class="com.bsc.dao.system.impl.RegionDAOImpl">
+		<property name="utility" ref="dataAccessUtility"></property>
+	</bean>
+
+	<!-- 数据访问工具类 -->
+	<bean id="dataAccessUtility" class="com.bsc.util.DataAccessUtility">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 病人信息管理 -->
+	<bean id="patientDao" class="com.bsc.dao.rc.IPatient" abstract="true" />
+	<bean id="patientDaoImpl" class="com.bsc.dao.rc.impl.PatientDAOImpl"
+		parent="patientDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 民族管理 -->
+	<bean id="nationDao" class="com.bsc.dao.system.INationDAO"
+		abstract="true" />
+	<bean id="nationDaoimpl" class="com.bsc.dao.system.impl.NationDAOImpl"
+		parent="nationDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 会诊管理 -->
+	<bean id="consultDao" class="com.bsc.dao.rc.IConsultationDao"
+		abstract="true" />
+	<bean id="consultDaoImpl" class="com.bsc.dao.rc.impl.ConsultationDaoImpl"
+		parent="consultDao">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- 接收会诊 -->
+	<bean id="revconsultDAO" class="com.bsc.dao.rc.IRevConsultationDao"
+		abstract="true" />
+	<bean id="revconsultDAOImpl" class="com.bsc.dao.rc.impl.RevConsultationDAOImpl"
+		parent="revconsultDAO">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+</beans>

@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{
+	background-color:#F2F2F2;
+}
+.logintop{
+	background:url(../img/lin.png) repeat-x scroll;
+	height:30px;
+	width:100%;	
+	position:absolute;
+	left:0;
+	top:0;
+}
+.bottom{
+	background:url(../img/lin.png) repeat-x scroll;
+	height:30px;
+	width:100%;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.bottom p{
+	text-align:center;
+	color:#F2F2F2;
+	padding-top:8px;
+}
+#mainPage{
+	position:absolute;
+	top:50%;
+	left:45%;
+	width:700px;
+	height:500px;
+	margin: -200px 0 0 -350px;
+}
+.dlt,.drt{
+	float:left;
+}
+.dlt{
+	padding-right:8px;
+}
+.drt{
+	border-left:1px solid #ccc;
+	height:70%;
+	width:350px;
+	padding-top:40px;
+}
+.drt p{
+	width:50px;
+	float:left;
+	padding-top:5px;
+	letter-spacing:1px;
+	font-size:12px;
+}
+.drt div{
+	padding:5px 0px 5px 0px;
+	margin-left:20px;
+}
+.drt .text{
+	background:url(../img/icon01.png) no-repeat scroll 6px 4px #FFFFFF;
+	border: 1px solid #CCCCCC;
+    float:left;
+    font-size: 14px;
+    height: 20px;
+    height: 20px\9;
+    padding: 2px 2px 2px 25px;
+    width: 210px;
+}
+.drt .pas{
+	background:url(../img/icon01.png) no-repeat scroll 6px -28px #FFFFFF;
+}
+.drt .yy{
+	width:110px;	
+}
+.drt #yzm{
+	margin-left:8px;
+	cursor:pointer;
+}
+.drt .btn{
+	background:url(../img/btnlogin.png) no-repeat;
+	width:99px;
+	height:30px;
+	border:none;
+	cursor:pointer;
+}
+.drt .rt{
+	background:url(../img/btnreset.png) no-repeat;
+	margin-left:8px;
+}
+.drt .lt{
+	margin-left:50px;
+}
+.drt h1{
+	font-family:"黑体";
+	font-weight:800;
+	color:#144a6c;
+	font-size:26px;
+}
+#dhelp{
+	border: 1px solid #CCCCCC;
+	background:url(../img/help.png) no-repeat;
+	height:200px;
+	width:250px;
+	position:absolute;
+    right:1px; 
+	bottom:31px;
+}
+#dhelp .title{
+	line-height:20px;
+	padding:2px 0px 2px 5px;
+}
+
+#dhelp ul{
+	margin-top:10px;
+}
+
+#dhelp ul li{
+	line-height:22px;
+	padding-left:10px;
+}
+#dhelp ul li a{
+	text-decoration:none;
+	color:#404040;
+}
+#dclose{
+	float:right;
+	padding:2px 5px 0px 0px;
+	*margin-top:-19px;
+	cursor:pointer;	
+}
+  	

@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{
+	height:100%;
+}
+.top{	
+	background:url(../../images/top-right.gif) repeat-x scroll;
+	width:100%;	
+	height:64px;
+}
+.top img{
+	position:absolute;
+	left:0;
+	top:0;
+} 
+.left{
+	width:200px;
+	height:100%;
+	margin-top:-66px;
+	border:1px solid #B8C9D6;
+	border-right:3px groove #B8C9D6;
+	border-left:2px solid #B8C9D6;
+}
+.left .lmenu{
+	margin-top:66px;
+	color: #555555;	
+    overflow:scroll;	
+	height:500px;
+	overflow-x:hidden;
+}
+.lmenu .menuitem{
+	margin-top:5px;
+}
+.lmenu .menuitem b{
+	font-family: "宋体";
+    font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	line-height:30px;
+	margin-left:2px;
+	cursor:pointer;
+}
+.lmenu .menuitem .title{
+	background:url(../img/nav02.gif) no-repeat scroll;
+	height:28px;
+    padding-left:15px;
+}
+.lmenu .menuitem .ine{
+	border-top:1px solid #B8C9D6;
+}
+.lmenu .menuitem ul{
+	margin-top:10px;
+}
+.lmenu .menuitem ul li{
+	background:url(../../images/ico06.gif) no-repeat scroll 21px 5px;
+	padding-left:35px;
+	margin-top:4px;
+	line-height:20px;
+}
+.lmenu .menuitem ul li a{
+	color: #555555;
+}
+.lmenu .menuitem ul li a:hover{
+	color: #FF0000;
+	text-decoration:underline;
+}
+.rbody{
+	
+}

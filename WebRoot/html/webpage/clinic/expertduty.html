@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>专家排班表</title>
+<link rel="stylesheet" type="text/css" href="../../content/css/com.css"/>
+<script language="javascript" src="../../content/js/jquery-1.4.2.min.js" ></script>
+<script language="javascript" src="../../content/js/control.js" ></script>
+<script language="javascript" src="../DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$.checkbox({'id':'cbxdept','height':'17px'});
+	$.checkbox({'id':'cbxexpert','height':'17px'});
+	$.checkbox({'id':'cbxdate','height':'17px'});
+});
+</script>
+</head>
+<body>
+<div class="main">
+<div class="queryarea">
+	<ul class="querylist">
+    	<li>选择科室：</li>
+        <li>
+        	<div style="height:20px;width:125px;">
+                	<div id="cbxdept" class="checkbox" style="width:120px;">
+                        <ul>
+                            <li value="2">医学专科</li>
+                            <li value="3">内科</li>
+                            <li value="4">外科</li>    
+                            <li value="0">妇产科学</li> 
+                            <li value="0">生殖中心</li>
+                            <li value="0">儿科学</li>
+                            <li value="0">骨外科</li>
+                            <li value="0">眼科学</li>
+                            <li value="0">口腔科学</li>
+                            <li value="0">耳鼻咽喉头颈科</li>
+                            <li value="0">肿瘤科</li>
+                            <li value="0">皮肤性病科</li>
+                            <li value="0">男科</li>
+                            <li value="0">皮肤美容</li>
+                            <li value="0">烧伤科</li>
+                            <li value="0">精神心理科</li>
+                            <li value="0">中医学</li>
+                            <li value="0">中西医结合科</li>
+                            <li value="0">传染病科</li>
+                            <li value="0">结核病科</li>
+                            <li value="0">介入医学科</li>
+                            <li value="0">康复医学科</li>
+                            <li value="0">运动医学科</li>
+                            <li value="0">麻醉医学科</li>
+                            <li value="0">职业病科</li>
+                            <li value="0">地方病科</li>
+                            <li value="0">营养科</li>
+                            <li value="0">医学影像学</li>
+                            <li value="0">病理科</li>
+                            <li value="0">其他科室</li>
+                        </ul>
+                        <div class="bordercheck"></div>
+                    </div>
+             </div>
+        </li>
+         <li> 选择专家：</li>
+         <li>
+                 	<div style="height:20px;width:100px;">
+                	<div id="cbxexpert" class="checkbox" style="width:100px;">
+                        <ul>
+                        	<li></li>
+                            <li value="2">专家1</li>
+                            <li value="3">专家2</li>
+                            <li value="4">专家3</li>    
+                            <li value="0">专家4</li> 
+                            <li value="0">专家5</li>
+                            
+                        </ul>
+                        <div class="bordercheck"></div>
+                    </div>
+             </div>
+        </li>
+        <li>
+        	坐诊日期： <input type="text" onfocus="WdatePicker({readOnly:true})" class="Wdate"/>
+        </li>
+       <li>
+                 	<div style="height:20px;width:60px;">
+                	<div id="cbxdate" class="checkbox" style="width:60px;">
+                        <ul>
+                        	<li></li>
+                            <li value="2">上午</li>
+                            <li value="3">下午</li>
+                            <li value="4">夜间</li>                            
+                        </ul>
+                        <div class="bordercheck"></div>
+                    </div>
+             </div>
+        </li>
+        <li>
+        	<input type="button" class="btn" value="搜索"/>
+        </li>
+    </ul>
+</div>
+<div>
+	<table class="tables">
+    	<thead>
+        	<tr>
+            	<th>序号</th>
+                <th>所属科室</th>
+                <th>坐诊专家</th>
+                <th>坐诊日期</th>
+                <th>坐诊时段</th>
+                <th>操作</th>     
+            </tr>
+        </thead>
+    	<tbody>
+        	<tr>
+            	<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ <div id="pagearea">
+    	<ul id="pageleft">
+        	<li>当前共有<span>120</span>条纪录，</li>
+            <li>当前第<span>1/10</span>页，</li>
+            <li>每页<span>10</span>条纪录</li>
+        </ul>
+        <ul id="pageright">
+        	<li class="fst"><a href="#">首页</a></li>
+            <li class="pre"><a href="#">上一页</a></li>
+            <li class="nxt"><a href="#">下一页</a></li>
+            <li class="lst"><a href="#">尾页</a></li>
+            <li class="n">转到 第 <input type="text" class="num" maxlength="5"/> 页</li>
+            <li class="n"><input type="button" value="转" class="btn_tz"/></li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>

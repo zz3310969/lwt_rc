@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户管理</title>
+<link rel="stylesheet" type="text/css" href="../../content/css/com.css"/>
+<link rel="stylesheet" type="text/css" href="../../content/css/modelWindow.css"/>
+<link rel="stylesheet" type="text/css" href="../../content/css/layer.css"/>
+<script language="javascript" type="text/javascript" src="../../content/js/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../../content/js/control.js"></script>
+<script language="javascript" type="text/javascript" src="../../content/js/modelWindow.js"></script>
+<script language="javascript" src="../DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript">
+	
+	
+	var sexoption = {'id':'cbxsex','width':110,'height':20,'option':{'0':'  ','1':'男','2':'女'}};
+	var $selectsex  = makeselect(sexoption);
+	
+	var departoption = {'id':'cbxdepart','width':110,'height':20,'option':{'0':'所在科室','1':'一科室'}};
+	var $selectdept = makeselect(departoption);
+	
+	var medicineoption = {'id':'cbxmedicine','width':110,'height':20,'option':{'0':'医学专科','1':'内科'}};
+	var $selectmedicine = makeselect(medicineoption);
+	
+	var titleoption = {'id':'cbxtitle','width':110,'height':20,'option':{'0':'职称','1':'住院医师'}};
+	var $selecttitle = makeselect(titleoption);
+	
+	var identityoption = {'id':'cbxidentity','width':110,'height':20,'option':{'0':' ','1':'管理员','2':'普通医生'}};
+	var $selectidentity = makeselect(identityoption);
+	
+	var $panel_div = $('<div>').css({'padding':'18px 8px 8px 8px'}).append($('<table>').addClass("tbsad").append($('<tbody>')
+							   .append($('<tr>').append($('<td>').width(80).text('登录名：').addClass('ttle'))
+							   					.append($('<td>').width(200).append($('<i>').text("*"))
+												.append($('<input type="text" value="">').addClass("txt")))
+												.append($('<td>').width(80).text('真实姓名：').addClass('ttle'))
+												.append($('<td>').width(200).append($('<input type="text" value="">').addClass("txt"))))
+							   .append($('<tr>').append($('<td>').text('出生日期：').addClass('ttle'))
+							   					.append($('<td>').append($('<input type="text" onfocus="WdatePicker({readOnly:true})" class="Wdate" value="">').addClass("txt")))
+												.append($('<td>').text('性别：').addClass('ttle'))
+												.append($('<td>').append($selectsex)))
+							   .append($('<tr>').append($('<td>').text('手机号码：').addClass('ttle'))
+							   					.append($('<td>').append($('<input type="text" maxlength="11" value="">').addClass("txt")))
+												.append($('<td>').text('办公电话：').addClass('ttle'))
+												.append($('<td>').append($('<input type="text" maxlength="13" value="">').addClass("txt"))))
+							   .append($('<tr>').append($('<td>').text('Email：').addClass('ttle'))
+							   					.append($('<td>').append($('<input type="text" value="">').addClass("txt")))
+												.append($('<td>').text('职称：').addClass('ttle'))
+												.append($('<td>').append($selecttitle)))
+							   .append($('<tr>').append($('<td>').text('科室：').addClass('ttle'))
+							   					.append($('<td>').append($selectdept))
+												.append($('<td>').text('医学专科').addClass('ttle'))
+												.append($('<td>').append($selectmedicine)))
+							   .append($('<tr>').append($('<td>').text('身份：').addClass('ttle'))
+							   					.append($('<td colspan="3">').append($selectidentity)))
+							   .append($('<tr>').append($('<td colspan="4">').css('text-align','center')
+							   					.append($('<input type="button" value="保存">').addClass("btn").width(65).height(24).css('margin-right','15px'))
+												.append($('<input type="button" value="重置">').addClass("btn").width(65).height(24))))																			
+								));
+								
+	function BindEventHandler(){
+		$.checkbox({'id':'cbxsex'});
+		$.checkbox({'id':'cbxdepart'});
+		$.checkbox({'id':'cbxmedicine'});
+		$.checkbox({'id':'cbxtitle'});
+		$.checkbox({'id':'cbxidentity'});
+		
+		$panel_div.find('input:[type="text"]:eq(3)').keypress(function(event) { 
+            var keyCode = event.which; 
+            if ((keyCode >= 48 && keyCode <=57)) 
+                return true; 
+            else 
+                return false; 
+        }).focus(function() { 
+            this.style.imeMode='disabled'; 
+        }); 
+	}							
+		
+	$(document).ready(function(){
+		$('#btn_new_user').click(function(){
+			$.modelWindow({handler:'newclinic',height:360,width:575,bgvisibel:true,title:'添加新用户', html:$panel_div});	
+			
+			BindEventHandler();
+		});	
+	});
+</script>
+</head>
+
+<body>
+<div class="main">
+
+<div class="queryarea">	
+	<div class="barea">
+    	<input type="button" class="btn" id="btn_new_user" value="新用户"/>
+	</div>
+</div>
+<div>
+	<table class="tables">
+    	<thead>
+    		<tr>
+	        	<th style="width:60px;"><input type="checkbox" style="margin-right:3px;"/>全选</th>
+	        	<th style="width:60px;">序号</th>
+	        	<th style="width:80px;">ID</th>
+	        	<th style="width:150px;">登录名</th>
+	        	<th style="width:200px;">真实姓名</th>
+	        	<th style="width:150px;">角色</th>
+	        	<th style="width:120px;">操作</th>
+        	</tr>                                                            
+        </thead>
+    	<tbody>
+        	<tr>
+            	<td class="center"><input type="checkbox" style="margin-right:3px;"/></td>
+            	<td class="center">1</td>
+            	<td class="center">100001</td>
+            	<td>admin</td>
+            	<td>张三</td>
+            	<td>管理员</td>
+                <td class="center"><a href="#" style="margin-right:10px;">修改</a><a href="#" >删除</a></td>                                                                
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+</body>
+</html>

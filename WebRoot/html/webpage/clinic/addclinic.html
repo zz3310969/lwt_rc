@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新增会诊记录</title>
+<link rel="stylesheet" type="text/css" href="../../content/css/com.css" />
+<script language="javascript" src="../../content/js/jquery-1.4.2.min.js"></script>
+<script language="javascript" src="../../content/js/control.js"></script>
+<script language="javascript" src="../DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function() {
+		$.checkbox({
+			'id' : 'cbxminzu',
+			'height' : '17px'
+		});
+		$.checkbox({
+			'id' : 'cbxcard',
+			'height' : '17px'
+		});
+	});
+</script>
+<style type="text/css">
+.tbls {
+	border-collapse: collapse;
+	margin: 15px 3px 3px 3px;
+}
+
+.tbls tr {
+	
+}
+
+.tbls tr,th,td {
+	border: 1px solid #cfcfcf;
+	height: 35px;
+	padding-left: 3px;
+	color: #191919;
+	width: 220px;
+	border: none;
+}
+
+.tbls .txtc {
+	border: none;
+	border-bottom: 1px solid #d4d4d4;
+	font-size: 18px;
+	font-weight: 700;
+	width: 300px;
+}
+
+.tbls tr .tt {
+	margin-right: 10px;
+	width: 100px;
+	text-align: right;
+	background-color: #f3f3f3;
+}
+
+.tbls tr td .rd {
+	font-size: 18px;
+	height: 15px;
+	width: 30px;
+}
+
+checkbox {
+	border: none;
+	border-bottom: 1px solid #999999;
+	font-size: 14px;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<div>
+			<table class="tbls">
+				<tbody>
+					<tr>
+						<td class="tt">证件类型：</td>
+						<td>
+							<div style="height:20px;width:80px;">
+								<div id="cbxcard" class="checkbox" style="width:80px;">
+									<ul>
+										<li>证件类型</li>
+										<li value="2">身份证</li>
+										<li value="3">军官证</li>
+									</ul>
+									<div class="bordercheck"></div>
+								</div>
+							</div></td>
+					</tr>
+					<tr>
+						<td class="tt">证件号码：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">社保卡/医保卡：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">姓名：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">性别：</td>
+						<td><input type="radio" name="sex" value="1" class="rd" /> 男
+							<input type="radio" name="sex" value="0" class="rd" /> 女</td>
+					</tr>
+					<tr>
+						<td class="tt">出生日期：</td>
+						<td><input type="text" onfocus="WdatePicker({readOnly:true})"
+							class="Wdate" style="width:90px;" /></td>
+					</tr>
+					<tr>
+						<td class="tt">民族：</td>
+						<td>
+							<div style="height:20px;width:80px;">
+								<div id="cbxminzu" class="checkbox" style="width:80px;">
+									<ul>
+										<li>民族</li>
+										<li value="2">汉族</li>
+										<li value="3">朝族</li>
+									</ul>
+									<div class="bordercheck"></div>
+								</div>
+							</div></td>
+					</tr>
+					<tr>
+						<td class="tt">婚姻状况：</td>
+						<td><input type="radio" name="marry" value="1" class="rd" />已婚
+							<input type="radio" name="marry" value="0" class="rd" />未婚</td>
+					</tr>
+					<tr>
+						<td class="tt">工作单位：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">通信地址：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">电话：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tt">手机：</td>
+						<td><input type="text" value="" class="txtc" />
+						</td>
+					</tr>
+					<tr>
+						<td style="width:120px;"></td>
+						<td><a href="addclinic2.html"><input type="button"
+								value="下一步" class="btn" />
+						</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</body>
+</html>
